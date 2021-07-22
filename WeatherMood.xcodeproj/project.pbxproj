@@ -24,6 +24,7 @@
 		878BDBF726A9C2B400D6F5A1 /* DiaryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBF626A9C2B400D6F5A1 /* DiaryListViewModel.swift */; };
 		878BDBF926A9C2C300D6F5A1 /* DiaryContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBF826A9C2C300D6F5A1 /* DiaryContainerViewModel.swift */; };
 		878BDBFB26A9C39000D6F5A1 /* ConfigurationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBFA26A9C39000D6F5A1 /* ConfigurationViewModel.swift */; };
+		878BDBFD26A9C3CB00D6F5A1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBFC26A9C3CB00D6F5A1 /* ViewModelType.swift */; };
 		DB1A871626A814BC00E34E43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871526A814BC00E34E43 /* AppDelegate.swift */; };
 		DB1A871826A814BC00E34E43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871726A814BC00E34E43 /* SceneDelegate.swift */; };
 		DB1A872026A814BC00E34E43 /* WeatherMood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871E26A814BC00E34E43 /* WeatherMood.xcdatamodeld */; };
@@ -86,6 +87,7 @@
 		878BDBF626A9C2B400D6F5A1 /* DiaryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewModel.swift; sourceTree = "<group>"; };
 		878BDBF826A9C2C300D6F5A1 /* DiaryContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContainerViewModel.swift; sourceTree = "<group>"; };
 		878BDBFA26A9C39000D6F5A1 /* ConfigurationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewModel.swift; sourceTree = "<group>"; };
+		878BDBFC26A9C3CB00D6F5A1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		DB1A871226A814BC00E34E43 /* WeatherMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1A871526A814BC00E34E43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB1A871726A814BC00E34E43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				878BDBF626A9C2B400D6F5A1 /* DiaryListViewModel.swift */,
 				878BDBF826A9C2C300D6F5A1 /* DiaryContainerViewModel.swift */,
 				878BDBFA26A9C39000D6F5A1 /* ConfigurationViewModel.swift */,
+				878BDBFC26A9C3CB00D6F5A1 /* ViewModelType.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				DB1A872026A814BC00E34E43 /* WeatherMood.xcdatamodeld in Sources */,
 				878BDBF926A9C2C300D6F5A1 /* DiaryContainerViewModel.swift in Sources */,
 				878BDBF326A9C28A00D6F5A1 /* WritingDiaryViewModel.swift in Sources */,
+				878BDBFD26A9C3CB00D6F5A1 /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
