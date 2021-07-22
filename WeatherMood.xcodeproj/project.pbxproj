@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		878BDBCA26A9A5C900D6F5A1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBC926A9A5C900D6F5A1 /* BaseViewController.swift */; };
+		878BDBD026A9B54400D6F5A1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBCF26A9B54400D6F5A1 /* Coordinator.swift */; };
 		DB1A871626A814BC00E34E43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871526A814BC00E34E43 /* AppDelegate.swift */; };
 		DB1A871826A814BC00E34E43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871726A814BC00E34E43 /* SceneDelegate.swift */; };
 		DB1A872026A814BC00E34E43 /* WeatherMood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871E26A814BC00E34E43 /* WeatherMood.xcdatamodeld */; };
@@ -17,7 +18,6 @@
 		DBD8D74226A947C300E3C016 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBD8D74126A947C300E3C016 /* .swiftlint.yml */; };
 		DBD8D74426A956EF00E3C016 /* Lottie.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8D74326A956EF00E3C016 /* Lottie.xcframework */; };
 		DBD8D74526A956EF00E3C016 /* Lottie.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8D74326A956EF00E3C016 /* Lottie.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DBF218C026A86B850010B521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF218BF26A86B850010B521 /* ViewController.swift */; };
 		DBF218C426A86BFA0010B521 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */; };
 		DBF218C526A86BFA0010B521 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBF218C626A86BFA0010B521 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C326A86BFA0010B521 /* RxSwift.xcframework */; };
@@ -55,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		878BDBC926A9A5C900D6F5A1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		878BDBCF26A9B54400D6F5A1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DB1A871226A814BC00E34E43 /* WeatherMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1A871526A814BC00E34E43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB1A871726A814BC00E34E43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		DB1A873526A815C000E34E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD8D74126A947C300E3C016 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DBD8D74326A956EF00E3C016 /* Lottie.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Lottie.xcframework; path = Carthage/Build/Lottie.xcframework; sourceTree = "<group>"; };
-		DBF218BF26A86B850010B521 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		DBF218C326A86BFA0010B521 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
 		DBFC781726A93E900069A2F1 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
@@ -95,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		878BDBCD26A9B52300D6F5A1 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				878BDBCF26A9B54400D6F5A1 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		DB1A870926A814BC00E34E43 = {
 			isa = PBXGroup;
 			children = (
@@ -123,10 +131,10 @@
 				DB1A874026A815D500E34E43 /* CoreData */,
 				DB1A873F26A815D100E34E43 /* Extension */,
 				DB1A873D26A815C800E34E43 /* Utilities */,
+				878BDBCD26A9B52300D6F5A1 /* Coordinator */,
 				DB1A873C26A815C600E34E43 /* ViewModel */,
 				DB1A873B26A815C300E34E43 /* ViewController */,
 				DB1A872C26A815B600E34E43 /* View */,
-				DBF218BF26A86B850010B521 /* ViewController.swift */,
 			);
 			path = WeatherMood;
 			sourceTree = "<group>";
@@ -339,8 +347,8 @@
 			files = (
 				878BDBCA26A9A5C900D6F5A1 /* BaseViewController.swift in Sources */,
 				DB1A871626A814BC00E34E43 /* AppDelegate.swift in Sources */,
+				878BDBD026A9B54400D6F5A1 /* Coordinator.swift in Sources */,
 				DB1A871826A814BC00E34E43 /* SceneDelegate.swift in Sources */,
-				DBF218C026A86B850010B521 /* ViewController.swift in Sources */,
 				DB1A872026A814BC00E34E43 /* WeatherMood.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
