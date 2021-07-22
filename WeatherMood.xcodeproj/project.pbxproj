@@ -13,11 +13,14 @@
 		DB1A872226A814BD00E34E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1A872126A814BD00E34E43 /* Assets.xcassets */; };
 		DB1A872526A814BD00E34E43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1A872326A814BD00E34E43 /* LaunchScreen.storyboard */; };
 		DB1A873426A815C000E34E43 /* WeatherMoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A873326A815C000E34E43 /* WeatherMoodTests.swift */; };
+		DBD8D74226A947C300E3C016 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBD8D74126A947C300E3C016 /* .swiftlint.yml */; };
 		DBF218C026A86B850010B521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF218BF26A86B850010B521 /* ViewController.swift */; };
 		DBF218C426A86BFA0010B521 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */; };
 		DBF218C526A86BFA0010B521 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBF218C626A86BFA0010B521 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C326A86BFA0010B521 /* RxSwift.xcframework */; };
 		DBF218C726A86BFA0010B521 /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C326A86BFA0010B521 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBFC781826A93E900069A2F1 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFC781726A93E900069A2F1 /* RxRelay.xcframework */; };
+		DBFC781926A93E900069A2F1 /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBFC781726A93E900069A2F1 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DBFC781926A93E900069A2F1 /* RxRelay.xcframework in Embed Frameworks */,
 				DBF218C526A86BFA0010B521 /* RxCocoa.xcframework in Embed Frameworks */,
 				DBF218C726A86BFA0010B521 /* RxSwift.xcframework in Embed Frameworks */,
 			);
@@ -56,9 +60,11 @@
 		DB1A873126A815C000E34E43 /* WeatherMoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherMoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1A873326A815C000E34E43 /* WeatherMoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMoodTests.swift; sourceTree = "<group>"; };
 		DB1A873526A815C000E34E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBD8D74126A947C300E3C016 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DBF218BF26A86B850010B521 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		DBF218C326A86BFA0010B521 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		DBFC781726A93E900069A2F1 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBFC781826A93E900069A2F1 /* RxRelay.xcframework in Frameworks */,
 				DBF218C426A86BFA0010B521 /* RxCocoa.xcframework in Frameworks */,
 				DBF218C626A86BFA0010B521 /* RxSwift.xcframework in Frameworks */,
 			);
@@ -84,6 +91,7 @@
 		DB1A870926A814BC00E34E43 = {
 			isa = PBXGroup;
 			children = (
+				DBD8D74126A947C300E3C016 /* .swiftlint.yml */,
 				DB1A871426A814BC00E34E43 /* WeatherMood */,
 				DB1A873226A815C000E34E43 /* WeatherMoodTests */,
 				DB1A871326A814BC00E34E43 /* Products */,
@@ -190,6 +198,7 @@
 		DBF218C126A86BFA0010B521 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBFC781726A93E900069A2F1 /* RxRelay.xcframework */,
 				DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */,
 				DBF218C326A86BFA0010B521 /* RxSwift.xcframework */,
 			);
@@ -207,6 +216,7 @@
 				DB1A870F26A814BC00E34E43 /* Frameworks */,
 				DB1A871026A814BC00E34E43 /* Resources */,
 				DBF218C826A86BFA0010B521 /* Embed Frameworks */,
+				DBFC781626A93E0E0069A2F1 /* SwiftLint Script */,
 			);
 			buildRules = (
 			);
@@ -277,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD8D74226A947C300E3C016 /* .swiftlint.yml in Resources */,
 				DB1A872526A814BD00E34E43 /* LaunchScreen.storyboard in Resources */,
 				DB1A872226A814BD00E34E43 /* Assets.xcassets in Resources */,
 			);
@@ -290,6 +301,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DBFC781626A93E0E0069A2F1 /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB1A870E26A814BC00E34E43 /* Sources */ = {
