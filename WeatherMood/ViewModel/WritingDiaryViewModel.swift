@@ -7,5 +7,5 @@
 
 import Foundation
 
-final class WritingDiaryViewModel {
+final class WritingDiaryViewModel: ViewModelType {
 }

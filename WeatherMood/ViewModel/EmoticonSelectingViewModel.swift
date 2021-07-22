@@ -7,5 +7,5 @@
 
 import Foundation
 
-final class EmoticonSelectingViewModel {
+final class EmoticonSelectingViewModel: ViewModelType {
 }

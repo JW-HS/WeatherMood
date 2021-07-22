@@ -7,5 +7,5 @@
 
 import Foundation
 
-final class ConfigurationViewModel {
+final class ConfigurationViewModel: ViewModelType {
 }

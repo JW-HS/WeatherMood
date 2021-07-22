@@ -7,5 +7,5 @@
 
 import Foundation
 
-final class DiaryCalendarViewModel {
+final class DiaryCalendarViewModel: ViewModelType {
 }
