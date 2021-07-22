@@ -569,5 +569,5 @@ reporter: "xcode"
 excluded:
     - Carthage
     - WeatherMood/*/AppDelegate.swift
-    - WeatherMood/*//SceneDelegate.swift
+    - WeatherMood/*/SceneDelegate.swift
     - WeatherMoodTests
