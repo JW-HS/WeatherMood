@@ -9,6 +9,9 @@ import UIKit
 import RxSwift
 
 class BaseViewController: UIViewController {
+    // MARK: - Coordinator
+    weak var coordinator: MainCoordinator?
+
     // MARK: - Rx
     var disposeBag: DisposeBag = DisposeBag()
 
