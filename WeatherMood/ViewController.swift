@@ -7,13 +7,15 @@
 
 import UIKit
 import RxSwift
-import RxCocoa
+import RxCocoa 
+import Lottie
 
 class ViewController: UIViewController {
     var button: UIButton = UIButton()
     var label: UILabel = UILabel()
     let disposeBag = DisposeBag()
     
+    let starAnimationView = AnimationView(name: "StarAnimation")
     override func viewDidLoad() {
         super.viewDidLoad()
         label.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
