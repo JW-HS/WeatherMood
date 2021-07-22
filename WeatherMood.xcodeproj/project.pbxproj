@@ -14,6 +14,8 @@
 		DB1A872526A814BD00E34E43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1A872326A814BD00E34E43 /* LaunchScreen.storyboard */; };
 		DB1A873426A815C000E34E43 /* WeatherMoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A873326A815C000E34E43 /* WeatherMoodTests.swift */; };
 		DBD8D74226A947C300E3C016 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBD8D74126A947C300E3C016 /* .swiftlint.yml */; };
+		DBD8D74426A956EF00E3C016 /* Lottie.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8D74326A956EF00E3C016 /* Lottie.xcframework */; };
+		DBD8D74526A956EF00E3C016 /* Lottie.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8D74326A956EF00E3C016 /* Lottie.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBF218C026A86B850010B521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF218BF26A86B850010B521 /* ViewController.swift */; };
 		DBF218C426A86BFA0010B521 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */; };
 		DBF218C526A86BFA0010B521 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -42,6 +44,7 @@
 			files = (
 				DBFC781926A93E900069A2F1 /* RxRelay.xcframework in Embed Frameworks */,
 				DBF218C526A86BFA0010B521 /* RxCocoa.xcframework in Embed Frameworks */,
+				DBD8D74526A956EF00E3C016 /* Lottie.xcframework in Embed Frameworks */,
 				DBF218C726A86BFA0010B521 /* RxSwift.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -61,6 +64,7 @@
 		DB1A873326A815C000E34E43 /* WeatherMoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMoodTests.swift; sourceTree = "<group>"; };
 		DB1A873526A815C000E34E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD8D74126A947C300E3C016 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		DBD8D74326A956EF00E3C016 /* Lottie.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Lottie.xcframework; path = Carthage/Build/Lottie.xcframework; sourceTree = "<group>"; };
 		DBF218BF26A86B850010B521 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		DBF218C326A86BFA0010B521 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 			files = (
 				DBFC781826A93E900069A2F1 /* RxRelay.xcframework in Frameworks */,
 				DBF218C426A86BFA0010B521 /* RxCocoa.xcframework in Frameworks */,
+				DBD8D74426A956EF00E3C016 /* Lottie.xcframework in Frameworks */,
 				DBF218C626A86BFA0010B521 /* RxSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +203,7 @@
 		DBF218C126A86BFA0010B521 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBD8D74326A956EF00E3C016 /* Lottie.xcframework */,
 				DBFC781726A93E900069A2F1 /* RxRelay.xcframework */,
 				DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */,
 				DBF218C326A86BFA0010B521 /* RxSwift.xcframework */,
