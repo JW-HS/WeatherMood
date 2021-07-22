@@ -11,6 +11,12 @@
 		878BDBD026A9B54400D6F5A1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBCF26A9B54400D6F5A1 /* Coordinator.swift */; };
 		878BDBD226A9B5A200D6F5A1 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBD126A9B5A200D6F5A1 /* MainCoordinator.swift */; };
 		878BDBD426A9B69000D6F5A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBD326A9B69000D6F5A1 /* MainViewController.swift */; };
+		878BDBE226A9BF7900D6F5A1 /* EmoticonSelectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBE126A9BF7900D6F5A1 /* EmoticonSelectingViewController.swift */; };
+		878BDBE426A9BFB300D6F5A1 /* WritingDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBE326A9BFB300D6F5A1 /* WritingDiaryViewController.swift */; };
+		878BDBE626A9BFCC00D6F5A1 /* DiaryCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBE526A9BFCC00D6F5A1 /* DiaryCalendarViewController.swift */; };
+		878BDBE826A9BFDE00D6F5A1 /* DiaryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBE726A9BFDE00D6F5A1 /* DiaryListViewController.swift */; };
+		878BDBEA26A9BFF500D6F5A1 /* DiaryContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBE926A9BFF500D6F5A1 /* DiaryContainerViewController.swift */; };
+		878BDBEC26A9C00E00D6F5A1 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBEB26A9C00E00D6F5A1 /* ConfigurationViewController.swift */; };
 		DB1A871626A814BC00E34E43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871526A814BC00E34E43 /* AppDelegate.swift */; };
 		DB1A871826A814BC00E34E43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871726A814BC00E34E43 /* SceneDelegate.swift */; };
 		DB1A872026A814BC00E34E43 /* WeatherMood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871E26A814BC00E34E43 /* WeatherMood.xcdatamodeld */; };
@@ -60,6 +66,12 @@
 		878BDBCF26A9B54400D6F5A1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		878BDBD126A9B5A200D6F5A1 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		878BDBD326A9B69000D6F5A1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		878BDBE126A9BF7900D6F5A1 /* EmoticonSelectingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonSelectingViewController.swift; sourceTree = "<group>"; };
+		878BDBE326A9BFB300D6F5A1 /* WritingDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryViewController.swift; sourceTree = "<group>"; };
+		878BDBE526A9BFCC00D6F5A1 /* DiaryCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCalendarViewController.swift; sourceTree = "<group>"; };
+		878BDBE726A9BFDE00D6F5A1 /* DiaryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewController.swift; sourceTree = "<group>"; };
+		878BDBE926A9BFF500D6F5A1 /* DiaryContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContainerViewController.swift; sourceTree = "<group>"; };
+		878BDBEB26A9C00E00D6F5A1 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		DB1A871226A814BC00E34E43 /* WeatherMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1A871526A814BC00E34E43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB1A871726A814BC00E34E43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +177,12 @@
 			children = (
 				878BDBC926A9A5C900D6F5A1 /* BaseViewController.swift */,
 				878BDBD326A9B69000D6F5A1 /* MainViewController.swift */,
+				878BDBE126A9BF7900D6F5A1 /* EmoticonSelectingViewController.swift */,
+				878BDBE326A9BFB300D6F5A1 /* WritingDiaryViewController.swift */,
+				878BDBE526A9BFCC00D6F5A1 /* DiaryCalendarViewController.swift */,
+				878BDBE726A9BFDE00D6F5A1 /* DiaryListViewController.swift */,
+				878BDBE926A9BFF500D6F5A1 /* DiaryContainerViewController.swift */,
+				878BDBEB26A9C00E00D6F5A1 /* ConfigurationViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -351,10 +369,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				878BDBEA26A9BFF500D6F5A1 /* DiaryContainerViewController.swift in Sources */,
 				878BDBD426A9B69000D6F5A1 /* MainViewController.swift in Sources */,
 				878BDBCA26A9A5C900D6F5A1 /* BaseViewController.swift in Sources */,
 				878BDBD226A9B5A200D6F5A1 /* MainCoordinator.swift in Sources */,
+				878BDBEC26A9C00E00D6F5A1 /* ConfigurationViewController.swift in Sources */,
+				878BDBE226A9BF7900D6F5A1 /* EmoticonSelectingViewController.swift in Sources */,
+				878BDBE826A9BFDE00D6F5A1 /* DiaryListViewController.swift in Sources */,
+				878BDBE426A9BFB300D6F5A1 /* WritingDiaryViewController.swift in Sources */,
 				DB1A871626A814BC00E34E43 /* AppDelegate.swift in Sources */,
+				878BDBE626A9BFCC00D6F5A1 /* DiaryCalendarViewController.swift in Sources */,
 				878BDBD026A9B54400D6F5A1 /* Coordinator.swift in Sources */,
 				DB1A871826A814BC00E34E43 /* SceneDelegate.swift in Sources */,
 				DB1A872026A814BC00E34E43 /* WeatherMood.xcdatamodeld in Sources */,
