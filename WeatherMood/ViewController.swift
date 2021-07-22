@@ -7,7 +7,7 @@
 
 import UIKit
 import RxSwift
-import RxCocoa 
+import RxCocoa
 import Lottie
 
 class ViewController: UIViewController {
