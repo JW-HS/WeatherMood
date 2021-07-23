@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class EmoticonSelectingViewController: BaseViewController {
+final class SelectingEmoticonViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
