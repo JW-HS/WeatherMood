@@ -12,13 +12,13 @@ import SwiftUI
 
 private struct Preview: UIViewRepresentable {
     typealias UIViewType = UIView
-    let view: UIView
+    let view: UIViewType
 
-    func makeUIView(context: Context) -> UIView {
+    func makeUIView(context: Context) -> UIViewType {
         view
     }
 
-    func updateUIView(_ uiView: UIView, context: Context) {
+    func updateUIView(_ uiView: UIViewType, context: Context) {
     }
 }
 
