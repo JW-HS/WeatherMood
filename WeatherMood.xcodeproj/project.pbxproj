@@ -12,11 +12,13 @@
 		DB1A872026A814BC00E34E43 /* WeatherMood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871E26A814BC00E34E43 /* WeatherMood.xcdatamodeld */; };
 		DB1A872226A814BD00E34E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1A872126A814BD00E34E43 /* Assets.xcassets */; };
 		DB1A872526A814BD00E34E43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1A872326A814BD00E34E43 /* LaunchScreen.storyboard */; };
-		DB1A873426A815C000E34E43 /* WeatherMoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A873326A815C000E34E43 /* WeatherMoodTests.swift */; };
 		DBD8D74226A947C300E3C016 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBD8D74126A947C300E3C016 /* .swiftlint.yml */; };
 		DBD8D74426A956EF00E3C016 /* Lottie.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8D74326A956EF00E3C016 /* Lottie.xcframework */; };
 		DBD8D74526A956EF00E3C016 /* Lottie.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8D74326A956EF00E3C016 /* Lottie.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DBF218C026A86B850010B521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF218BF26A86B850010B521 /* ViewController.swift */; };
+		DBD8D76B26A9B9B200E3C016 /* CoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8D76A26A9B9B200E3C016 /* CoreDataTest.swift */; };
+		DBD8D76E26A9BEC400E3C016 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8D76D26A9BEC400E3C016 /* CoreDataManager.swift */; };
+		DBD8D77026AA93EF00E3C016 /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8D76F26AA93EF00E3C016 /* MockViewController.swift */; };
+		DBD8D77526AAC63D00E3C016 /* CoreDataStringName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8D77426AAC63D00E3C016 /* CoreDataStringName.swift */; };
 		DBF218C426A86BFA0010B521 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */; };
 		DBF218C526A86BFA0010B521 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBF218C626A86BFA0010B521 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C326A86BFA0010B521 /* RxSwift.xcframework */; };
@@ -61,11 +63,13 @@
 		DB1A872426A814BD00E34E43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB1A872626A814BD00E34E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB1A873126A815C000E34E43 /* WeatherMoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherMoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB1A873326A815C000E34E43 /* WeatherMoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMoodTests.swift; sourceTree = "<group>"; };
 		DB1A873526A815C000E34E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD8D74126A947C300E3C016 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DBD8D74326A956EF00E3C016 /* Lottie.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Lottie.xcframework; path = Carthage/Build/Lottie.xcframework; sourceTree = "<group>"; };
-		DBF218BF26A86B850010B521 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBD8D76A26A9B9B200E3C016 /* CoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTest.swift; sourceTree = "<group>"; };
+		DBD8D76D26A9BEC400E3C016 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		DBD8D76F26AA93EF00E3C016 /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		DBD8D77426AAC63D00E3C016 /* CoreDataStringName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStringName.swift; sourceTree = "<group>"; };
 		DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		DBF218C326A86BFA0010B521 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
 		DBFC781726A93E900069A2F1 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
@@ -121,10 +125,8 @@
 				DB1A874026A815D500E34E43 /* CoreData */,
 				DB1A873F26A815D100E34E43 /* Extension */,
 				DB1A873D26A815C800E34E43 /* Utilities */,
-				DB1A873C26A815C600E34E43 /* ViewModel */,
 				DB1A873B26A815C300E34E43 /* ViewController */,
 				DB1A872C26A815B600E34E43 /* View */,
-				DBF218BF26A86B850010B521 /* ViewController.swift */,
 			);
 			path = WeatherMood;
 			sourceTree = "<group>";
@@ -139,7 +141,8 @@
 		DB1A873226A815C000E34E43 /* WeatherMoodTests */ = {
 			isa = PBXGroup;
 			children = (
-				DB1A873326A815C000E34E43 /* WeatherMoodTests.swift */,
+				DBD8D76A26A9B9B200E3C016 /* CoreDataTest.swift */,
+				DBD8D76F26AA93EF00E3C016 /* MockViewController.swift */,
 				DB1A873526A815C000E34E43 /* Info.plist */,
 			);
 			path = WeatherMoodTests;
@@ -150,13 +153,6 @@
 			children = (
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		DB1A873C26A815C600E34E43 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DB1A873D26A815C800E34E43 /* Utilities */ = {
@@ -188,6 +184,8 @@
 		DB1A874026A815D500E34E43 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				DBD8D76D26A9BEC400E3C016 /* CoreDataManager.swift */,
+				DBD8D77426AAC63D00E3C016 /* CoreDataStringName.swift */,
 				DB1A871E26A814BC00E34E43 /* WeatherMood.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -336,7 +334,8 @@
 			files = (
 				DB1A871626A814BC00E34E43 /* AppDelegate.swift in Sources */,
 				DB1A871826A814BC00E34E43 /* SceneDelegate.swift in Sources */,
-				DBF218C026A86B850010B521 /* ViewController.swift in Sources */,
+				DBD8D77526AAC63D00E3C016 /* CoreDataStringName.swift in Sources */,
+				DBD8D76E26A9BEC400E3C016 /* CoreDataManager.swift in Sources */,
 				DB1A872026A814BC00E34E43 /* WeatherMood.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,7 +344,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB1A873426A815C000E34E43 /* WeatherMoodTests.swift in Sources */,
+				DBD8D77026AA93EF00E3C016 /* MockViewController.swift in Sources */,
+				DBD8D76B26A9B9B200E3C016 /* CoreDataTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

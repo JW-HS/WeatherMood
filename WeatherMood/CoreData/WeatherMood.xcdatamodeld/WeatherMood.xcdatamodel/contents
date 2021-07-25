@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Diary" representedClassName="Diary" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="main" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="discomfort" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DiscomfortIndex" inverseName="diary" inverseEntity="DiscomfortIndex"/>
+        <relationship name="emoticon" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Emoticon" inverseName="diary" inverseEntity="Emoticon"/>
+        <relationship name="humidity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Humidity" inverseName="diary" inverseEntity="Humidity"/>
+        <relationship name="temperature" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Temperature" inverseName="diary" inverseEntity="Temperature"/>
+    </entity>
+    <entity name="DiscomfortIndex" representedClassName="DiscomfortIndex" syncable="YES" codeGenerationType="class">
+        <attribute name="degree" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="diaryCount" optional="YES" attributeType="Integer 64" derived="YES" derivationExpression="diary.@count" usesScalarValueType="YES"/>
+        <relationship name="diary" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Diary" inverseName="discomfort" inverseEntity="Diary"/>
+    </entity>
+    <entity name="Emoticon" representedClassName="Emoticon" syncable="YES" codeGenerationType="class">
+        <attribute name="bigEmoticonName" optional="YES" attributeType="String"/>
+        <attribute name="diaryCount" optional="YES" attributeType="Integer 64" derived="YES" derivationExpression="diary.@count" usesScalarValueType="YES"/>
+        <attribute name="smallEmoticonName" optional="YES" attributeType="String"/>
+        <relationship name="diary" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Diary" inverseName="emoticon" inverseEntity="Diary"/>
+    </entity>
+    <entity name="Humidity" representedClassName="Humidity" syncable="YES" codeGenerationType="class">
+        <attribute name="diaryCount" optional="YES" attributeType="Integer 64" derived="YES" derivationExpression="diary.@count" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="diary" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Diary" inverseName="humidity" inverseEntity="Diary"/>
+    </entity>
+    <entity name="Temperature" representedClassName="Temperature" syncable="YES" codeGenerationType="class">
+        <attribute name="degree" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="diaryCount" optional="YES" attributeType="Integer 64" derived="YES" derivationExpression="diary.@count" usesScalarValueType="YES"/>
+        <relationship name="diary" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Diary" inverseName="temperature" inverseEntity="Diary"/>
+    </entity>
+    <elements>
+        <element name="Diary" positionX="-434.77734375" positionY="50.171875" width="136.94140625" height="148"/>
+        <element name="DiscomfortIndex" positionX="-103.7265625" positionY="57.36328125" width="128" height="88"/>
+        <element name="Emoticon" positionX="-142.9609375" positionY="-61.1875" width="128" height="89"/>
+        <element name="Humidity" positionX="-152.37890625" positionY="277.67578125" width="128" height="88"/>
+        <element name="Temperature" positionX="-91.8984375" positionY="151.69921875" width="128" height="88"/>
+    </elements>
 </model>
