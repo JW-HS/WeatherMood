@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8719C56626ACF83900397112 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8719C56526ACF83900397112 /* UIViewController+Preview.swift */; };
+		8719C56826ACF86400397112 /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8719C56726ACF86400397112 /* UIView+Preview.swift */; };
 		874FD72C26AA9E7F00F8EBC1 /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874FD72B26AA9E7F00F8EBC1 /* Viewable.swift */; };
 		878BDBCA26A9A5C900D6F5A1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBC926A9A5C900D6F5A1 /* BaseViewController.swift */; };
 		878BDBD026A9B54400D6F5A1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBCF26A9B54400D6F5A1 /* Coordinator.swift */; };
@@ -71,6 +73,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8719C56526ACF83900397112 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
+		8719C56726ACF86400397112 /* UIView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
 		874FD72B26AA9E7F00F8EBC1 /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 		878BDBC926A9A5C900D6F5A1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		878BDBCF26A9B54400D6F5A1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 		DB1A873F26A815D100E34E43 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				8719C56526ACF83900397112 /* UIViewController+Preview.swift */,
+				8719C56726ACF86400397112 /* UIView+Preview.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -398,8 +404,10 @@
 			files = (
 				874FD72C26AA9E7F00F8EBC1 /* Viewable.swift in Sources */,
 				878BDBEA26A9BFF500D6F5A1 /* DiaryContainerViewController.swift in Sources */,
+				8719C56626ACF83900397112 /* UIViewController+Preview.swift in Sources */,
 				878BDBD426A9B69000D6F5A1 /* MainViewController.swift in Sources */,
 				878BDBF726A9C2B400D6F5A1 /* DiaryListViewModel.swift in Sources */,
+				8719C56826ACF86400397112 /* UIView+Preview.swift in Sources */,
 				878BDBFB26A9C39000D6F5A1 /* ConfigurationViewModel.swift in Sources */,
 				878BDBCA26A9A5C900D6F5A1 /* BaseViewController.swift in Sources */,
 				878BDBD226A9B5A200D6F5A1 /* MainCoordinator.swift in Sources */,
