@@ -12,13 +12,13 @@ import SwiftUI
 
 private struct Preview: UIViewControllerRepresentable {
     typealias UIViewControllerType = UIViewController
-    let viewController: UIViewController
+    let viewController: UIViewControllerType
 
-    func makeUIViewController(context: Context) -> UIViewController {
+    func makeUIViewController(context: Context) -> UIViewControllerType {
         viewController
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
     }
 }
 
