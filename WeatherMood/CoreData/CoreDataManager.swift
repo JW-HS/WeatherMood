@@ -21,7 +21,7 @@ enum CoreDataError: Error {
 /// ```
 /// let manager = CoreDatManager.shared
 /// ```
-final class CoreDataManager: CoreDataManageble {
+final class CoreDataManager: CoreDataManageable {
     static let shared: CoreDataManager = CoreDataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -35,5 +35,7 @@ final class CoreDataManager: CoreDataManageble {
     }()
     lazy var mainContext: NSManagedObjectContext = persistentContainer.viewContext 
     lazy var backgroundContext: NSManagedObjectContext = persistentContainer.newBackgroundContext()
+    
+    var emptyTemperature: Int16 = 9_999
     private init() { }
 }

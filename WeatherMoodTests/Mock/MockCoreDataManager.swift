@@ -9,7 +9,7 @@ import Foundation
 @testable import WeatherMood
 import CoreData
 
-final class MockCoreDataManager: CoreDataManageble {
+final class MockCoreDataManager: CoreDataManageable {
     static let shared: MockCoreDataManager = MockCoreDataManager()
     
     lazy var persistentContainer: NSPersistentContainer = {
@@ -25,6 +25,7 @@ final class MockCoreDataManager: CoreDataManageble {
     }()
     lazy var mainContext: NSManagedObjectContext = persistentContainer.viewContext
     lazy var backgroundContext: NSManagedObjectContext = persistentContainer.newBackgroundContext()
+    var emptyTemperature: Int16 = 9_999
 
     private init() { }
 }

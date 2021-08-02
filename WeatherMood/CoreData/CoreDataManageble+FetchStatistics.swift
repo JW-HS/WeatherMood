@@ -1,5 +1,5 @@
 //
-//  CoreDataManager+FetchStatistics.swift
+//  CoreDataManageable
 //  WeatherMood
 //
 //  Created by hyunsu on 2021/07/31.
@@ -7,7 +7,7 @@
 import CoreData
 import Foundation
 //TODO: ⚠️수정 및 추가예정
-extension CoreDataManageble {
+extension CoreDataManageable {
     /// 특정`target`날짜로부터 1주일전까지 diary들을 가져온다.
     /// - Parameters:
     ///   - target: 특정 날짜지정
@@ -35,7 +35,7 @@ extension CoreDataManageble {
         let request: NSFetchRequest<Diary> = Diary.fetchRequest()
         let predicate: NSPredicate = NSPredicate(format: "date BETWEEN {%@, %@}", start as NSDate, end as NSDate)
         request.predicate = predicate
-        request.fetchLimit = 30
+        request.fetchLimit = 32
         
         mainContext.perform {
             let list: [Diary]? = try? request.execute()

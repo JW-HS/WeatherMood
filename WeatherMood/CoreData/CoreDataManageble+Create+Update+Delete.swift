@@ -1,15 +1,14 @@
 //
-//  CoreDataManager+Create.swift
+//  CoreDataManageable
 //  WeatherMood
 //
 //  Created by hyunsu on 2021/07/27.
 //
-
-import Foundation
 import CoreData
+import Foundation
 
 // MARK: - Create
-extension CoreDataManageble {
+extension CoreDataManageable {
     /// Diary객체를 만들고 저장한다.
     /// - Parameters:
     ///   - model: Diary 객체를 만들고 전달한다.
@@ -36,7 +35,7 @@ extension CoreDataManageble {
     /// }
     /// ```
     func create(_ model: Diary,
-                _ completion: CheckSaveCompletion ) {
+                _ completion: CheckSaveCompletion) {
         mainContext.perform {
             createBy(model.date) { diaryPerMonth in
                 guard let diaryPerMonth = diaryPerMonth else {
@@ -49,23 +48,29 @@ extension CoreDataManageble {
         }
     }
     
+    /// Diary과 Diary의 날짜에 해당하는 DiaryPerMonth에 사용된 온도, 풍량, 습도, 불쾌지수, 이모티콘을 할당하는 메서드입니다. DiaryPerMonth는 월간별로 사용된 온도, 풍량, 습도, 불쾌지수, 이모티콘을 빠르게 확인할 수 있도록 하는 객체입니다.
+    /// - Parameters:
+    ///   - model: 특정 Diary를 이용합니다.
+    ///   - perModel: 해당 Diary의 날짜에 해당하는 DiaryPerMonth를 이용합니다. 
     private func bind(_ model: Diary,
-                      to perModel: DiaryPerMonth) {
+                      to perModel: DiaryPerMonth,
+                      isDelete: Bool = false ) {
         guard let date = model.date,
-              let index = date.getIndexByMonth() else {
+              let index = date.indexByMonth() else {
             return
         }
-        perModel.discomfortArray?[index] = model.discomfortType ?? ""
-        perModel.temperatureArray?[index] = model.temperatureType ?? ""
-        perModel.emoticonArray?[index] = model.emoticonType ?? ""
-        perModel.humidityArray?[index] = model.humidityType ?? ""
-        perModel.windSpeedArray?[index] = model.windSpeedType ?? ""
+        perModel.discomfortArray?[index] = isDelete ? 0 : model.discomfortRawValue
+        perModel.temperatureArray?[index] = isDelete ? emptyTemperature : model.temperature
+        perModel.emoticonArray?[index] = isDelete ? 0 : model.emoticonRawValue
+        perModel.humidityArray?[index] = isDelete ? 0 : model.humidityRawValue
+        perModel.windSpeedArray?[index] = isDelete ? 0 : model.windSpeedRawValue
     }
     
+    /// 해당 날짜에 해당하는 월 DiaryPerMonth를 가져오는데, 없는 경우에는 빈값을 만들어 가져온다
     private func createBy(_ target: Date?,
-                          _ completion: @escaping (DiaryPerMonth?) -> Void ) {
+                          _ completion: @escaping (DiaryPerMonth?) -> Void) {
         guard let date = target?.filteredMonth(),
-              let numDays = date.getNumberOfDaysByMonth() else {
+              let numDays = date.numberOfDaysByMonth() else {
             completion(nil)
             return }
         let request: NSFetchRequest<DiaryPerMonth> = DiaryPerMonth.fetchRequest()
@@ -75,12 +80,11 @@ extension CoreDataManageble {
             guard let model: DiaryPerMonth = try? request.execute().first else {
                 let perMonth: DiaryPerMonth = DiaryPerMonth(context: self.mainContext)
                 perMonth.date = date
-                let emptyArray: [String] = Array(repeating: "", count: numDays)
-                perMonth.emoticonArray = emptyArray
-                perMonth.humidityArray = emptyArray
-                perMonth.temperatureArray = emptyArray
-                perMonth.windSpeedArray = emptyArray
-                perMonth.discomfortArray = emptyArray
+                perMonth.emoticonArray = Array(repeating: 0, count: numDays)
+                perMonth.humidityArray = Array(repeating: 0, count: numDays)
+                perMonth.temperatureArray = Array(repeating: emptyTemperature, count: numDays)
+                perMonth.windSpeedArray = Array(repeating: 0, count: numDays)
+                perMonth.discomfortArray = Array(repeating: 0, count: numDays)
                 self.save { result in
                     switch result {
                     case .success(_):
@@ -97,7 +101,7 @@ extension CoreDataManageble {
 }
 
 // MARK: - Update
-extension CoreDataManageble {
+extension CoreDataManageable {
     /// 수정한 `Diary`를 업데이트한다.
     /// - Parameters:
     ///   - diary: 수정한 Diary를 `참조`하여 전달한다.
@@ -120,6 +124,36 @@ extension CoreDataManageble {
                     return
                 }
                 bind(diary, to: diaryPerMonth)
+                self.save(completion)
+            }
+        }
+    }
+}
+
+extension CoreDataManageable {
+    /// 특정 Model을 삭제한다.
+    /// - Parameters:
+    ///   - diary: 선택한 Diary를 참조하여 전달한다.
+    ///   - completion: Result< Bool, Error > 를 인자로 받는 비동기 클로져로, 성공할경우 true를 받게되고, 실패할경우 Error를 받게된다. 에러핸들링 필요하다.
+    /// ```
+    /// manager.delete(diary) { result in
+    ///     switch result {
+    ///     case .success(_):
+    ///         print("success")
+    ///     case .failure(_):
+    ///         print("failed")
+    ///     }
+    /// }
+    /// ```
+    func delete(_ diary: Diary, _ completion: CheckSaveCompletion) {
+        mainContext.perform {
+            createBy(diary.date) { diaryPerMonth in
+                guard let diaryPerMonth = diaryPerMonth else {
+                    completion?(.failure(.invalid))
+                    return
+                }
+                bind(diary, to: diaryPerMonth, isDelete: true)
+                self.mainContext.delete(diary)
                 self.save(completion)
             }
         }

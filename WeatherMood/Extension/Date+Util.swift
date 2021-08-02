@@ -20,7 +20,7 @@ extension Date {
     
     /// 해당 Date의 한달 날짜개수를 반환한다.
     /// - Returns: 한달 날짜개수의 옵셔널을 반환한다.
-    func getNumberOfDaysByMonth() -> Int? {
+    func numberOfDaysByMonth() -> Int? {
         var calendar: Calendar = Calendar.current
         calendar.timeZone = NSTimeZone.local
         let range: Range<Int>? = calendar.range(of: .day, in: .month, for: self)
@@ -31,7 +31,7 @@ extension Date {
     /// - Returns: 인덱스의 옵셔널을 반환한다.
     ///
     /// 1일인경우 0을 반환한다.
-    func getIndexByMonth() -> Int? {
+    func indexByMonth() -> Int? {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd"
         dateFormatter.timeZone = NSTimeZone.local

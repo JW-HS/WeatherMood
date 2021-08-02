@@ -19,7 +19,7 @@ class CoreDataTestDiary: XCTestCase {
         manager.deleteAllMock(DiaryPerMonth.self, nil)
     }
     
-    //MARK: - Test 
+    //MARK: - Test
     func test_diary를_다른모델없이_하나_생성할수있다() {
         timeout(2) { excp in
             let model = Diary(context: manager.mainContext)
@@ -64,7 +64,6 @@ class CoreDataTestDiary: XCTestCase {
                         self.manager.fetch { (diaries: [Diary]?) in
                             exp.fulfill()
                             if let diary = diaries {
-                                diary.forEach { print($0.title) }
                                 XCTAssertTrue(diary.count == 2, String(diary.count))
                             } else {
                                 XCTFail()
@@ -125,7 +124,7 @@ class CoreDataTestDiary: XCTestCase {
                         case .success(_):
                             self.manager.fetch(limit: 1) { (diaries: [Diary]?) in
                                 exp.fulfill()
-                                XCTAssertTrue(diaries?.count == 0, String(diaries!.count) )
+                                XCTAssertTrue(diaries?.count == 0, String(diaries!.count))
                             }
                         case .failure(_):
                             exp.fulfill()
@@ -161,6 +160,31 @@ class CoreDataTestDiary: XCTestCase {
             }
         }
     }
+    
+    func test_diary를_만들고_삭제하면_DiaryPerMonth에도_없다() {
+        timeout(2) { exp in
+            let date = Date()
+            self.createMockDiary(date) {
+                self.manager.fetch(limit: 1) { (fetched: [Diary]?) in
+                    let diary = fetched!.first!
+                    self.manager.delete(diary) { result in
+                        switch result {
+                        case .success(_):
+                            self.manager.fetch(limit: 1) { (diaries: [DiaryPerMonth]?) in
+                                exp.fulfill()
+                                let index = date.indexByMonth()!
+                                XCTAssert(diaries!.first!.emoticonArray!.filter{$0 != 0}.count == 0 )
+                            }
+                        case .failure(_):
+                            exp.fulfill()
+                            XCTFail()
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
 
     func test_Diary를_하나만들고_업데이트할수있다() {
         timeout(2) { exp in
@@ -183,12 +207,12 @@ class CoreDataTestDiary: XCTestCase {
     func test_diary를_2개_만들면_perMontn의_emoticonArray에는_두개를_가져올수있다() {
         timeout(2) { exp in
             createMockDiary(Date().offsetDay(+3)!,
-                            emoticonType: "1") {
+                            emoticon: .sunny) {
                 self.createMockDiary(Date().offsetDay(+1)!,
-                                     emoticonType: "2") {
+                                     emoticon: .hot ) {
                     self.manager.fetch { (diaryPerMonths: [DiaryPerMonth]?) in
                         exp.fulfill()
-                        XCTAssert(diaryPerMonths!.first!.emoticonArray!.filter{$0 != ""}.count == 2, String(diaryPerMonths!.first!.emoticonArray!.filter{$0 != ""}.count))
+                        XCTAssert(diaryPerMonths!.first!.emoticonArray!.filter{$0 != 0}.count == 2, String(diaryPerMonths!.first!.emoticonArray!.filter{$0 != 0 }.count))
                     }
                 }
             }
@@ -197,16 +221,16 @@ class CoreDataTestDiary: XCTestCase {
     
     func test_diary를_2개_만들어_수정하여_perMonth에서도_반영된다() {
         timeout(2) { exp in
-            createMockDiary(emoticonType: "1") {
+            createMockDiary(emoticon: .hot) {
                 self.manager.fetch({ (diaries: [Diary]?) in
                     let diary = diaries!.first!
-                    diary.emoticonType = "2"
+                    diary.emoticon = .rainy
                     self.manager.update(diary) { _ in
                         self.manager.fetch { (diaryPerMonths: [DiaryPerMonth]?) in
                             exp.fulfill()
-                            let index = Date().getIndexByMonth()!
+                            let index = Date().indexByMonth()!
                             print(diaryPerMonths!.first!.emoticonArray)
-                            XCTAssert(diaryPerMonths!.first!.emoticonArray?[index] == "2", diaryPerMonths!.first!.emoticonArray![index])
+                            XCTAssert(diaryPerMonths!.first!.emoticonArray![index] == Emoticon.rainy.rawValue, String(diaryPerMonths!.first!.emoticonArray![index]))
                         }
                     }
                 })
@@ -235,12 +259,12 @@ class CoreDataTestDiary: XCTestCase {
 
 extension CoreDataTestDiary {
     func createMockDiary(_ date: Date = Date(),
-                         emoticonType: String = "",
-                         _ completion: @escaping (() -> Void) ) {
+                         emoticon: Emoticon = .hot,
+                         _ completion: @escaping (() -> Void)) {
         let model = Diary(context: manager.mainContext)
         model.title = "오늘은.."
         model.date = date
-        model.emoticonType = emoticonType
+        model.emoticon = .hot
         manager.create(model) { _ in
             completion()
         }

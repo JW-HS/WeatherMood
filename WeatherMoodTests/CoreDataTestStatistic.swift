@@ -13,6 +13,7 @@ class CoreDataTestStatistic: XCTestCase {
     
     override func tearDown() {
         manager.deleteAllMock(Diary.self, nil)
+        manager.deleteAllMock(DiaryPerMonth.self, nil)
     }
     //MARK: - Test
     //TODO: ⚠️테스트예정

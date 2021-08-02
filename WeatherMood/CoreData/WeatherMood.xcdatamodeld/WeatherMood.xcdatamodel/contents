@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Diary" representedClassName="Diary" syncable="YES" codeGenerationType="class">
+        <attribute name="contents" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" spotlightIndexingEnabled="YES"/>
-        <attribute name="discomfortType" optional="YES" attributeType="String"/>
-        <attribute name="emoticonType" optional="YES" attributeType="String"/>
-        <attribute name="humidityType" optional="YES" attributeType="String"/>
-        <attribute name="main" optional="YES" attributeType="String"/>
-        <attribute name="temperatureType" optional="YES" attributeType="String"/>
+        <attribute name="discomfortRawValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="emoticonRawValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="humidityRawValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="windSpeedType" optional="YES" attributeType="String"/>
+        <attribute name="windSpeedRawValue" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="DiaryPerMonth" representedClassName="DiaryPerMonth" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="discomfortArray" optional="YES" attributeType="Transformable" customClassName="[String]"/>
-        <attribute name="emoticonArray" optional="YES" attributeType="Transformable" customClassName="[String]"/>
-        <attribute name="humidityArray" optional="YES" attributeType="Transformable" customClassName="[String]"/>
-        <attribute name="temperatureArray" optional="YES" attributeType="Transformable" customClassName="[String]"/>
-        <attribute name="windSpeedArray" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="discomfortArray" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[Int16]"/>
+        <attribute name="emoticonArray" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[Int16]"/>
+        <attribute name="humidityArray" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[Int16]"/>
+        <attribute name="temperatureArray" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[Int16]"/>
+        <attribute name="windSpeedArray" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[Int16]"/>
     </entity>
     <elements>
         <element name="Diary" positionX="-434.77734375" positionY="50.171875" width="136.94140625" height="149"/>
