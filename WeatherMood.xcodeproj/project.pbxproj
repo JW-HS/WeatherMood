@@ -26,7 +26,7 @@
 		878BDBEA26A9BFF500D6F5A1 /* DiaryContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBE926A9BFF500D6F5A1 /* DiaryContainerViewController.swift */; };
 		878BDBEC26A9C00E00D6F5A1 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBEB26A9C00E00D6F5A1 /* ConfigurationViewController.swift */; };
 		878BDBEF26A9C21200D6F5A1 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBEE26A9C21200D6F5A1 /* MainViewModel.swift */; };
-		878BDBF126A9C26800D6F5A1 /* EmoticonSelectingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBF026A9C26800D6F5A1 /* EmoticonSelectingViewModel.swift */; };
+		878BDBF126A9C26800D6F5A1 /* SelectingEmoticonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBF026A9C26800D6F5A1 /* SelectingEmoticonViewModel.swift */; };
 		878BDBF326A9C28A00D6F5A1 /* WritingDiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBF226A9C28A00D6F5A1 /* WritingDiaryViewModel.swift */; };
 		878BDBF526A9C2A100D6F5A1 /* DiaryCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBF426A9C2A100D6F5A1 /* DiaryCalendarViewModel.swift */; };
 		878BDBF726A9C2B400D6F5A1 /* DiaryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878BDBF626A9C2B400D6F5A1 /* DiaryListViewModel.swift */; };
@@ -37,13 +37,25 @@
 		87A3ECFF26B5A4DA008C95A2 /* WeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A3ECFE26B5A4DA008C95A2 /* WeekCollectionViewCell.swift */; };
 		DB1A871626A814BC00E34E43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871526A814BC00E34E43 /* AppDelegate.swift */; };
 		DB1A871826A814BC00E34E43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871726A814BC00E34E43 /* SceneDelegate.swift */; };
-		DB1A872026A814BC00E34E43 /* WeatherMood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB1A871E26A814BC00E34E43 /* WeatherMood.xcdatamodeld */; };
 		DB1A872226A814BD00E34E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1A872126A814BD00E34E43 /* Assets.xcassets */; };
 		DB1A872526A814BD00E34E43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1A872326A814BD00E34E43 /* LaunchScreen.storyboard */; };
-		DB1A873426A815C000E34E43 /* WeatherMoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A873326A815C000E34E43 /* WeatherMoodTests.swift */; };
+		DBA6BB0526B406A200B7165B /* CoreDataManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6BB0426B406A200B7165B /* CoreDataManageable.swift */; };
+		DBA6BB0726B4078400B7165B /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6BB0626B4078400B7165B /* MockCoreDataManager.swift */; };
+		DBA6BB1126B5775400B7165B /* CoreDataTestStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6BB1026B5775400B7165B /* CoreDataTestStatistic.swift */; };
+		DBA6BB1326B5787500B7165B /* CoreDataManageble+FetchStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6BB1226B5787500B7165B /* CoreDataManageble+FetchStatistics.swift */; };
+		DBA6BB2026B68DAC00B7165B /* Date+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6BB1F26B68DAC00B7165B /* Date+Util.swift */; };
+		DBA6BB5626B81F8100B7165B /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6BB5526B81F8100B7165B /* CoreDataModel.swift */; };
+		DBA6BB5826B8313C00B7165B /* CoreDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA6BB5726B8313C00B7165B /* CoreDataType.swift */; };
+		DBA6BB5B26B8FB2A00B7165B /* WeatherMood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBA6BB5926B8FB2A00B7165B /* WeatherMood.xcdatamodeld */; };
+		DBBAC17F26AFF93E00E03D75 /* CoreDataManageble+Create+Update+Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAC17E26AFF93E00E03D75 /* CoreDataManageble+Create+Update+Delete.swift */; };
+		DBBAC18126AFFAE700E03D75 /* CoreDataManageble+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAC18026AFFAE700E03D75 /* CoreDataManageble+Fetch.swift */; };
+		DBBAC18526AFFB3400E03D75 /* CoreDataManageble+DeleteTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBAC18426AFFB3400E03D75 /* CoreDataManageble+DeleteTest.swift */; };
 		DBD8D74226A947C300E3C016 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DBD8D74126A947C300E3C016 /* .swiftlint.yml */; };
 		DBD8D74426A956EF00E3C016 /* Lottie.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8D74326A956EF00E3C016 /* Lottie.xcframework */; };
 		DBD8D74526A956EF00E3C016 /* Lottie.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD8D74326A956EF00E3C016 /* Lottie.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBD8D76B26A9B9B200E3C016 /* CoreDataTestDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8D76A26A9B9B200E3C016 /* CoreDataTestDiary.swift */; };
+		DBD8D76E26A9BEC400E3C016 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8D76D26A9BEC400E3C016 /* CoreDataManager.swift */; };
+		DBD8D77026AA93EF00E3C016 /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD8D76F26AA93EF00E3C016 /* MockViewController.swift */; };
 		DBF218C426A86BFA0010B521 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */; };
 		DBF218C526A86BFA0010B521 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBF218C626A86BFA0010B521 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF218C326A86BFA0010B521 /* RxSwift.xcframework */; };
@@ -99,7 +111,7 @@
 		878BDBE926A9BFF500D6F5A1 /* DiaryContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryContainerViewController.swift; sourceTree = "<group>"; };
 		878BDBEB26A9C00E00D6F5A1 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		878BDBEE26A9C21200D6F5A1 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		878BDBF026A9C26800D6F5A1 /* EmoticonSelectingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonSelectingViewModel.swift; sourceTree = "<group>"; };
+		878BDBF026A9C26800D6F5A1 /* SelectingEmoticonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectingEmoticonViewModel.swift; sourceTree = "<group>"; };
 		878BDBF226A9C28A00D6F5A1 /* WritingDiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingDiaryViewModel.swift; sourceTree = "<group>"; };
 		878BDBF426A9C2A100D6F5A1 /* DiaryCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCalendarViewModel.swift; sourceTree = "<group>"; };
 		878BDBF626A9C2B400D6F5A1 /* DiaryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewModel.swift; sourceTree = "<group>"; };
@@ -111,15 +123,27 @@
 		DB1A871226A814BC00E34E43 /* WeatherMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1A871526A814BC00E34E43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB1A871726A814BC00E34E43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DB1A871F26A814BC00E34E43 /* WeatherMood.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherMood.xcdatamodel; sourceTree = "<group>"; };
 		DB1A872126A814BD00E34E43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB1A872426A814BD00E34E43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB1A872626A814BD00E34E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB1A873126A815C000E34E43 /* WeatherMoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherMoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB1A873326A815C000E34E43 /* WeatherMoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMoodTests.swift; sourceTree = "<group>"; };
 		DB1A873526A815C000E34E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBA6BB0426B406A200B7165B /* CoreDataManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManageable.swift; sourceTree = "<group>"; };
+		DBA6BB0626B4078400B7165B /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
+		DBA6BB1026B5775400B7165B /* CoreDataTestStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestStatistic.swift; sourceTree = "<group>"; };
+		DBA6BB1226B5787500B7165B /* CoreDataManageble+FetchStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManageble+FetchStatistics.swift"; sourceTree = "<group>"; };
+		DBA6BB1F26B68DAC00B7165B /* Date+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Util.swift"; sourceTree = "<group>"; };
+		DBA6BB5526B81F8100B7165B /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		DBA6BB5726B8313C00B7165B /* CoreDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataType.swift; sourceTree = "<group>"; };
+		DBA6BB5A26B8FB2A00B7165B /* WeatherMood.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherMood.xcdatamodel; sourceTree = "<group>"; };
+		DBBAC17E26AFF93E00E03D75 /* CoreDataManageble+Create+Update+Delete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManageble+Create+Update+Delete.swift"; sourceTree = "<group>"; };
+		DBBAC18026AFFAE700E03D75 /* CoreDataManageble+Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManageble+Fetch.swift"; sourceTree = "<group>"; };
+		DBBAC18426AFFB3400E03D75 /* CoreDataManageble+DeleteTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManageble+DeleteTest.swift"; sourceTree = "<group>"; };
 		DBD8D74126A947C300E3C016 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DBD8D74326A956EF00E3C016 /* Lottie.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Lottie.xcframework; path = Carthage/Build/Lottie.xcframework; sourceTree = "<group>"; };
+		DBD8D76A26A9B9B200E3C016 /* CoreDataTestDiary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestDiary.swift; sourceTree = "<group>"; };
+		DBD8D76D26A9BEC400E3C016 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		DBD8D76F26AA93EF00E3C016 /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
 		DBF218C226A86BFA0010B521 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
 		DBF218C326A86BFA0010B521 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
 		DBFC781726A93E900069A2F1 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
@@ -180,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				DB1A873E26A815CD00E34E43 /* SupportingFiles */,
-				DB1A874126A815D900E34E43 /* Model */,
+				DBBAC18626AFFF1200E03D75 /* Model */,
 				DB1A874026A815D500E34E43 /* CoreData */,
 				DB1A873F26A815D100E34E43 /* Extension */,
 				DB1A873D26A815C800E34E43 /* Utilities */,
@@ -207,7 +231,9 @@
 		DB1A873226A815C000E34E43 /* WeatherMoodTests */ = {
 			isa = PBXGroup;
 			children = (
-				DB1A873326A815C000E34E43 /* WeatherMoodTests.swift */,
+				DBA6BB2126B6ABC300B7165B /* Mock */,
+				DBD8D76A26A9B9B200E3C016 /* CoreDataTestDiary.swift */,
+				DBA6BB1026B5775400B7165B /* CoreDataTestStatistic.swift */,
 				DB1A873526A815C000E34E43 /* Info.plist */,
 			);
 			path = WeatherMoodTests;
@@ -232,7 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				878BDBEE26A9C21200D6F5A1 /* MainViewModel.swift */,
-				878BDBF026A9C26800D6F5A1 /* EmoticonSelectingViewModel.swift */,
+				878BDBF026A9C26800D6F5A1 /* SelectingEmoticonViewModel.swift */,
 				878BDBF226A9C28A00D6F5A1 /* WritingDiaryViewModel.swift */,
 				878BDBF426A9C2A100D6F5A1 /* DiaryCalendarViewModel.swift */,
 				878BDBF626A9C2B400D6F5A1 /* DiaryListViewModel.swift */,
@@ -270,6 +296,7 @@
 				8719C56726ACF86400397112 /* UIView+Preview.swift */,
 				8757D11F26B03482003F647C /* Date+.swift */,
 				8757D12126B03701003F647C /* UIView+.swift */,
+				DBA6BB1F26B68DAC00B7165B /* Date+Util.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -277,14 +304,31 @@
 		DB1A874026A815D500E34E43 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				DB1A871E26A814BC00E34E43 /* WeatherMood.xcdatamodeld */,
+				DBA6BB0426B406A200B7165B /* CoreDataManageable.swift */,
+				DBBAC17E26AFF93E00E03D75 /* CoreDataManageble+Create+Update+Delete.swift */,
+				DBBAC18026AFFAE700E03D75 /* CoreDataManageble+Fetch.swift */,
+				DBA6BB1226B5787500B7165B /* CoreDataManageble+FetchStatistics.swift */,
+				DBBAC18426AFFB3400E03D75 /* CoreDataManageble+DeleteTest.swift */,
+				DBD8D76D26A9BEC400E3C016 /* CoreDataManager.swift */,
+				DBA6BB5526B81F8100B7165B /* CoreDataModel.swift */,
+				DBA6BB5926B8FB2A00B7165B /* WeatherMood.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		DB1A874126A815D900E34E43 /* Model */ = {
+		DBA6BB2126B6ABC300B7165B /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				DBD8D76F26AA93EF00E3C016 /* MockViewController.swift */,
+				DBA6BB0626B4078400B7165B /* MockCoreDataManager.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		DBBAC18626AFFF1200E03D75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DBA6BB5726B8313C00B7165B /* CoreDataType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,18 +467,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBA6BB5626B81F8100B7165B /* CoreDataModel.swift in Sources */,
 				874FD72C26AA9E7F00F8EBC1 /* Viewable.swift in Sources */,
+				DBBAC18126AFFAE700E03D75 /* CoreDataManageble+Fetch.swift in Sources */,
+				DBA6BB5B26B8FB2A00B7165B /* WeatherMood.xcdatamodeld in Sources */,
 				878BDBEA26A9BFF500D6F5A1 /* DiaryContainerViewController.swift in Sources */,
 				8719C56626ACF83900397112 /* UIViewController+Preview.swift in Sources */,
 				878BDBD426A9B69000D6F5A1 /* MainViewController.swift in Sources */,
 				878BDBF726A9C2B400D6F5A1 /* DiaryListViewModel.swift in Sources */,
 				8719C56826ACF86400397112 /* UIView+Preview.swift in Sources */,
+				DBA6BB5826B8313C00B7165B /* CoreDataType.swift in Sources */,
+				DBA6BB1326B5787500B7165B /* CoreDataManageble+FetchStatistics.swift in Sources */,
+				DBA6BB0526B406A200B7165B /* CoreDataManageable.swift in Sources */,
 				878BDBFB26A9C39000D6F5A1 /* ConfigurationViewModel.swift in Sources */,
 				878BDBCA26A9A5C900D6F5A1 /* BaseViewController.swift in Sources */,
 				878BDBD226A9B5A200D6F5A1 /* MainCoordinator.swift in Sources */,
 				878BDBEC26A9C00E00D6F5A1 /* ConfigurationViewController.swift in Sources */,
 				87A1194926B3BE4300A371CC /* VerticalIconTextView.swift in Sources */,
+				DBBAC17F26AFF93E00E03D75 /* CoreDataManageble+Create+Update+Delete.swift in Sources */,
 				878BDBE226A9BF7900D6F5A1 /* SelectingEmoticonViewController.swift in Sources */,
+				DBA6BB2026B68DAC00B7165B /* Date+Util.swift in Sources */,
 				878BDBE826A9BFDE00D6F5A1 /* DiaryListViewController.swift in Sources */,
 				878BDBEF26A9C21200D6F5A1 /* MainViewModel.swift in Sources */,
 				8757D12826B1959F003F647C /* CurrentTemperatureView.swift in Sources */,
@@ -445,11 +497,12 @@
 				878BDBF526A9C2A100D6F5A1 /* DiaryCalendarViewModel.swift in Sources */,
 				DB1A871626A814BC00E34E43 /* AppDelegate.swift in Sources */,
 				8720476B26AEE2EF000D5F4D /* Styles.swift in Sources */,
-				878BDBF126A9C26800D6F5A1 /* EmoticonSelectingViewModel.swift in Sources */,
+				878BDBF126A9C26800D6F5A1 /* SelectingEmoticonViewModel.swift in Sources */,
 				878BDBE626A9BFCC00D6F5A1 /* DiaryCalendarViewController.swift in Sources */,
+				DBBAC18526AFFB3400E03D75 /* CoreDataManageble+DeleteTest.swift in Sources */,
 				878BDBD026A9B54400D6F5A1 /* Coordinator.swift in Sources */,
 				DB1A871826A814BC00E34E43 /* SceneDelegate.swift in Sources */,
-				DB1A872026A814BC00E34E43 /* WeatherMood.xcdatamodeld in Sources */,
+				DBD8D76E26A9BEC400E3C016 /* CoreDataManager.swift in Sources */,
 				878BDBF926A9C2C300D6F5A1 /* DiaryContainerViewModel.swift in Sources */,
 				8757D12426B18E64003F647C /* CurrentWeatherView.swift in Sources */,
 				878BDBF326A9C28A00D6F5A1 /* WritingDiaryViewModel.swift in Sources */,
@@ -461,7 +514,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB1A873426A815C000E34E43 /* WeatherMoodTests.swift in Sources */,
+				DBD8D77026AA93EF00E3C016 /* MockViewController.swift in Sources */,
+				DBA6BB0726B4078400B7165B /* MockCoreDataManager.swift in Sources */,
+				DBD8D76B26A9B9B200E3C016 /* CoreDataTestDiary.swift in Sources */,
+				DBA6BB1126B5775400B7165B /* CoreDataTestStatistic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,12 +770,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DB1A871E26A814BC00E34E43 /* WeatherMood.xcdatamodeld */ = {
+		DBA6BB5926B8FB2A00B7165B /* WeatherMood.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				DB1A871F26A814BC00E34E43 /* WeatherMood.xcdatamodel */,
+				DBA6BB5A26B8FB2A00B7165B /* WeatherMood.xcdatamodel */,
 			);
-			currentVersion = DB1A871F26A814BC00E34E43 /* WeatherMood.xcdatamodel */;
+			currentVersion = DBA6BB5A26B8FB2A00B7165B /* WeatherMood.xcdatamodel */;
 			path = WeatherMood.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
