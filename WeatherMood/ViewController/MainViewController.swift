@@ -34,8 +34,8 @@ final class MainViewController: BaseViewController, Viewable {
     }()
 
     // MARK: Content
-    private lazy var contentContainerView: UIStackView = {
-        let stackView: UIStackView = UIStackView(arrangedSubviews: [contentEditMenuContainerView, contentTextView])
+    private lazy var contentStackView: UIStackView = {
+        let stackView: UIStackView = UIStackView(arrangedSubviews: [contentEditMenuStackView, contentTextView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fill
@@ -44,7 +44,7 @@ final class MainViewController: BaseViewController, Viewable {
         return stackView
     }()
 
-    private lazy var contentEditMenuContainerView: UIStackView = {
+    private lazy var contentEditMenuStackView: UIStackView = {
         let stackView: UIStackView = UIStackView(arrangedSubviews: [contentEmptyView, contentWriteButton, contentEditButton, contentDeleteButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
@@ -155,7 +155,7 @@ final class MainViewController: BaseViewController, Viewable {
         suggestionContainerView.addSubview(suggestionLabel)
 
         let containerStackView: UIStackView = {
-            let stackView: UIStackView = UIStackView(arrangedSubviews: [todayQuestionLabel, currentWeatherView, contentContainerView, suggestionContainerView])
+            let stackView: UIStackView = UIStackView(arrangedSubviews: [todayQuestionLabel, currentWeatherView, contentStackView, suggestionContainerView])
             stackView.translatesAutoresizingMaskIntoConstraints = false
             stackView.axis = .vertical
             stackView.distribution = .fill
