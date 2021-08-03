@@ -12,25 +12,17 @@ import RxSwift
 
 final class MainViewController: BaseViewController, Viewable {
     // MARK: - View Properties
-    // MARK: Current Status or Weather
-    lazy var currentWeatherContainerViewHeightAnchor: NSLayoutConstraint = self.currentWeatherContainerView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.5)
+    // MARK: Today Question or Current Weather
+    // FIXME: 디자인 가이드가 나오면 별도의 네임 스페이스에서 상수 관리
+    lazy var todayQuestionLabelHeightAnchor: NSLayoutConstraint = self.todayQuestionLabel.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.35)
 
-    private let currentWeatherContainerView: UIView = {
-        let view: UIView = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-    // FIXME: Status 말고 적절한 변수명으로 변경하기
-    private let currentStatusLabel: UILabel = {
+    private let todayQuestionLabel: UILabel = {
         let label: UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.text = "오늘 현수님의 하늘은 어땠나요?"
-        label.font = UIFont.systemFont(ofSize: Styles.grid(4), weight: .bold)
+        label.text = "오늘 현수님의\n하늘은 어땠나요?"
+        label.font = UIFont.systemFont(ofSize: Styles.grid(8), weight: .bold)
         label.isHidden = false
-//        label.setContentHuggingPriority(.defaultLow, for: .vertical)
-//        label.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         return label
     }()
 
@@ -92,6 +84,7 @@ final class MainViewController: BaseViewController, Viewable {
         return button
     }()
 
+    // FIXME: remove after configure ViewModel
     private var _isWrite: Bool = false
     private var isWrite: Bool {
         _isWrite.toggle()
@@ -101,7 +94,7 @@ final class MainViewController: BaseViewController, Viewable {
     private let contentTextView: UITextView = {
         let textView: UITextView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = .systemYellow
+        textView.backgroundColor = .systemGroupedBackground
         textView.layer.cornerRadius = Styles.cornerRadius
         textView.isEditable = false
         textView.textColor = .label
@@ -114,14 +107,6 @@ final class MainViewController: BaseViewController, Viewable {
     }()
 
     // MARK: Suggestion Text
-    private let guideContainerView: UIView = {
-        let view: UIView = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemBlue
-        view.isHidden = true
-        return view
-    }()
-
     private let suggestionLabel: UILabel = {
         let label: UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -159,12 +144,10 @@ final class MainViewController: BaseViewController, Viewable {
 
     // MARK: - Setup
     func setupViews() {
-        currentWeatherContainerView.addSubviews(currentStatusLabel, currentWeatherView)
-
         let suggestionContainerView: UIView = {
             let view: UIView = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.backgroundColor = .systemTeal
+            view.backgroundColor = .systemGroupedBackground
             view.layer.cornerRadius = Styles.cornerRadius
             view.layer.masksToBounds = false
             return view
@@ -172,7 +155,7 @@ final class MainViewController: BaseViewController, Viewable {
         suggestionContainerView.addSubview(suggestionLabel)
 
         let containerStackView: UIStackView = {
-            let stackView: UIStackView = UIStackView(arrangedSubviews: [currentWeatherContainerView, contentContainerView, suggestionContainerView])
+            let stackView: UIStackView = UIStackView(arrangedSubviews: [todayQuestionLabel, currentWeatherView, contentContainerView, suggestionContainerView])
             stackView.translatesAutoresizingMaskIntoConstraints = false
             stackView.axis = .vertical
             stackView.distribution = .fill
@@ -183,14 +166,9 @@ final class MainViewController: BaseViewController, Viewable {
 
         view.addSubviews(containerStackView, weekCollectionView)
 
-        currentWeatherContainerViewHeightAnchor.isActive = true
+        todayQuestionLabelHeightAnchor.isActive = true
 
         NSLayoutConstraint.activate([
-            // in currentWeatherContainerView
-            currentStatusLabel.centerYAnchor.constraint(equalTo: currentWeatherContainerView.centerYAnchor),
-            currentStatusLabel.centerXAnchor.constraint(equalTo: currentWeatherContainerView.centerXAnchor),
-            currentWeatherView.centerYAnchor.constraint(equalTo: currentWeatherContainerView.centerYAnchor),
-            currentWeatherView.centerXAnchor.constraint(equalTo: currentWeatherContainerView.centerXAnchor),
             // suggestionContainerView
             suggestionLabel.leadingAnchor.constraint(equalTo: suggestionContainerView.leadingAnchor, constant: Styles.grid(2)),
             suggestionLabel.topAnchor.constraint(equalTo: suggestionContainerView.topAnchor, constant: Styles.grid(4)),
@@ -212,6 +190,7 @@ final class MainViewController: BaseViewController, Viewable {
 
 // MARK: - Private
 extension MainViewController {
+    // FIXME: 데이터의 변경에 따라 뷰를 변경해야 하는 데, 현재는 이를 담당할 객체가 없어서 임의로 할당
     private func setNavigation() {
         title = Date.currentDate
         let calendarButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chart.pie"),
@@ -225,10 +204,12 @@ extension MainViewController {
         navigationItem.rightBarButtonItems = [settingButton, calendarButton]
     }
 
+    // FIXME: 작성 기능 이후 수정
     @objc
     private func diaryIsWrite() {
         DispatchQueue.main.async {
-            self.currentStatusLabel.isHidden.toggle()
+            self.todayQuestionLabelHeightAnchor.isActive.toggle()
+            self.todayQuestionLabel.isHidden.toggle()
             self.currentWeatherView.isHidden.toggle()
 
             self.contentWriteButton.isHidden.toggle()
@@ -237,15 +218,14 @@ extension MainViewController {
 
             if self.isWrite {
                 self.contentTextView.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                self.currentWeatherContainerViewHeightAnchor.isActive = true
             } else {
                 self.contentTextView.text = "마음의 날씨를 기록해보세요!"
-                self.currentWeatherContainerViewHeightAnchor.isActive = true
             }
             self.loadViewIfNeeded()
         }
     }
 
+    // TODO: WeekView 구현
     private func bindWeekCollectionView() {
         let dumpData: Observable<[String]> = Observable<[String]>.just(Array(1...31).map { String($0) })
 
