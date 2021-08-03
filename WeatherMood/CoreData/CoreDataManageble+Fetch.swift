@@ -19,11 +19,11 @@ extension CoreDataManageable {
     ///     if let _ = diaries {
     /// }
     /// ```
-    func fetch<T: NSManagedObject>(limit: Int = 100,
+    func fetch<T: NSManagedObject>(limit: Int = CoreDataManageableConstant.defaultLimitSize,
                                    _ completion: @escaping(([T]?) -> Void)) {
         let request: NSFetchRequest<T> = NSFetchRequest(entityName: String(describing: T.self))
         request.fetchLimit = limit
-        request.fetchBatchSize = 100
+        request.fetchBatchSize = CoreDataManageableConstant.defaultBatchSize
         request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         mainContext.perform {
             let temperature: [T]? = try? request.execute()

@@ -24,7 +24,6 @@ extension CoreDataManageable {
     /// ```
     func deleteAll<T: NSManagedObject>(_ type: T.Type, _ completion: CheckSaveCompletion) {
         let request: NSFetchRequest<T> = NSFetchRequest(entityName: String(describing: T.self))
-        request.fetchBatchSize = 100
         backgroundContext.perform {
             let models: [T]? = try? request.execute()
             var isError: Bool = false

@@ -25,7 +25,7 @@ final class MockCoreDataManager: CoreDataManageable {
     }()
     lazy var mainContext: NSManagedObjectContext = persistentContainer.viewContext
     lazy var backgroundContext: NSManagedObjectContext = persistentContainer.newBackgroundContext()
-    var emptyTemperature: Int16 = 9_999
+    var emptyTemperature: Int16 = CoreDataManageableConstant.emptyTemperature
 
     private init() { }
 }

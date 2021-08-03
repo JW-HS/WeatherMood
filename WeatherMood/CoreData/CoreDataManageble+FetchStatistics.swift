@@ -35,7 +35,7 @@ extension CoreDataManageable {
         let request: NSFetchRequest<Diary> = Diary.fetchRequest()
         let predicate: NSPredicate = NSPredicate(format: "date BETWEEN {%@, %@}", start as NSDate, end as NSDate)
         request.predicate = predicate
-        request.fetchLimit = 32
+        request.fetchLimit = CoreDataManageableConstant.defaultBatchSize
         
         mainContext.perform {
             let list: [Diary]? = try? request.execute()
@@ -63,7 +63,7 @@ extension CoreDataManageable {
         let request: NSFetchRequest<Diary> = Diary.fetchRequest()
         let predicate: NSPredicate = NSPredicate(format: "date BETWEEN {%@, %@}", start as NSDate, end as NSDate)
         request.predicate = predicate
-        request.fetchLimit = 50
+        request.fetchLimit = CoreDataManageableConstant.defaultBatchSize
         
         mainContext.perform {
             let list: [Diary]? = try? request.execute()

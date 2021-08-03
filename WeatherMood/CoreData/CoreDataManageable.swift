@@ -7,6 +7,13 @@
 
 import CoreData
 import Foundation
+
+enum CoreDataManageableConstant {
+    static let defaultLimitSize: Int = 100
+    static let defaultBatchSize: Int = 100
+    static let emptyTemperature: Int16 = 9_999
+}
+
 /// CoreDataManager가 되기위한 protocol이다.
 ///
 /// extension으로 필요한 CRUD기능들을 구현해놓았다.
