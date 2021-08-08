@@ -69,7 +69,7 @@ extension CoreDataManageable {
     /// 해당 날짜에 해당하는 월 DiaryPerMonth를 가져오는데, 없는 경우에는 빈값을 만들어 가져온다
     private func createBy(_ target: Date?,
                           _ completion: @escaping (DiaryPerMonth?) -> Void) {
-        guard let date = target?.filteredMonth(),
+        guard let date = target?.firstDayOfMonth(),
               let numDays = date.numberOfDaysByMonth() else {
             completion(nil)
             return }

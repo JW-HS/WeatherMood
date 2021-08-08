@@ -13,11 +13,6 @@ enum CalendarStartWeekDay: Int {
     case monday = 2
     
     var offset: Int {
-        switch self {
-        case .monday:
-            return 2
-        case .sunday:
-            return 1
-        }
+        rawValue
     }
 }

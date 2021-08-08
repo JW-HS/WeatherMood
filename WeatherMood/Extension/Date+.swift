@@ -10,34 +10,30 @@ import Foundation
 extension Date {
     static var currentDate: String {
         let date: Date = Date()
-        return "\(Calendar.current.component(.year, from: date))-\(Calendar.current.component(.month, from: date))-\( Calendar.current.component(.day, from: date))"
+        let calendar: Calendar = Calendar.current
+        return "\(calendar.component(.year, from: date))-\(calendar.component(.month, from: date))-\(calendar.component(.day, from: date))"
     }
 }
 
 extension Date {
     /// 일~월의경우 해당 Date가 속한 일~월 중 하나의 값을가져온다. ( 1부터 7까지 사이값 )
     func firstDayWeekday() -> Int {
-        var calendar: Calendar = Calendar.current
-        calendar.timeZone = NSTimeZone.local
-        return calendar.component(.weekday, from: self)
+        Calendar.current.component(.weekday, from: self)
     }
     
     /// Date에서 *월1일로만 첫월의날짜만 가져온다.
     /// - Returns:  첫월의날짜의 옵셔널을 반환한다.
-    func filteredMonth() -> Date? {
-        var calendar: Calendar = Calendar.current
-        calendar.timeZone = NSTimeZone.local
+    func firstDayOfMonth() -> Date? {
+        let calendar: Calendar = Calendar.current
         let components: DateComponents = calendar.dateComponents([.year, .month], from: self)
         let start: Date? = calendar.date(from: components)
         return start
     }
     
     /// 해당Date의 시간을 뺀, *년*월*일만 가져온다.
-    func filteredMonthDay() -> Date? {
-        var calendar: Calendar = Calendar.current
-        calendar.timeZone = NSTimeZone.local
-        let components: DateComponents = calendar.dateComponents([.year, .month, .day], from: self)
-        let start: Date? = calendar.date(from: components)
+    func withoutTime() -> Date? {
+        let components: DateComponents = Calendar.current.dateComponents([.year, .month, .day], from: self)
+        let start: Date? = Calendar.current.date(from: components)
         return start
     }
     
@@ -64,9 +60,7 @@ extension Date {
     /// 해당 Date의 한달 날짜개수를 반환한다.
     /// - Returns: 한달 날짜개수의 옵셔널을 반환한다.
     func numberOfDaysByMonth() -> Int? {
-        var calendar: Calendar = Calendar.current
-        calendar.timeZone = NSTimeZone.local
-        let range: Range<Int>? = calendar.range(of: .day, in: .month, for: self)
+        let range: Range<Int>? = Calendar.current.range(of: .day, in: .month, for: self)
         return range?.count
     }
 
@@ -90,17 +84,16 @@ extension Date {
     /// - Returns: 지나거나 이전의 날짜의 옵셔널을 반환한다.
     ///
     /// offset이 1일경우 1일이후 날짜를 반환하고, offset이 -1인경우에 1일이전 날짜를 반환한다.
-    func offsetDay(_ offset: Int) -> Date? {
-        var calendar: Calendar = Calendar.current
-        calendar.timeZone = NSTimeZone.local
+    func day(by offset: Int) -> Date? {
+        let calendar: Calendar = Calendar.current
         let end: Date? = calendar.date(byAdding: .day, value: offset, to: calendar.startOfDay(for: self))
         return end
     }
     
-    func offsetMonth(_ offset: Int) -> Date? {
+    func month(by offset: Int) -> Date? {
         var calendar: Calendar = Calendar.current
         calendar.timeZone = NSTimeZone.local
-        let end: Date? = calendar.date(byAdding: .month, value: offset, to: calendar.startOfDay(for: self))
+        let end: Date? = Calendar.current.date(byAdding: .month, value: offset, to: calendar.startOfDay(for: self))
         return end
     }
 }

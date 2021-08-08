@@ -11,6 +11,10 @@ enum CalendarType: Int {
     case month = 6
     case week = 1
     
+    var numberOfRows: Int {
+        rawValue
+    }
+    
     var numberOfCellInPage: Int {
         switch self {
         case .month:

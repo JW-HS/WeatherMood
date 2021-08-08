@@ -85,7 +85,7 @@ class CalendarView: UIStackView, Viewable {
         collectionView.setCollectionViewLayout(setupLayout(by: type), animated: false)
     }
     
-    private func setupLayout(by row: CalendarType) -> UICollectionViewLayout {
+    private func setupLayout(by type: CalendarType) -> UICollectionViewLayout {
         let itemSize: NSCollectionLayoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth((1.0)), heightDimension: .fractionalHeight(1.0))
         let item: NSCollectionLayoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: Styles.grid(1), leading: Styles.grid(1), bottom: Styles.grid(1), trailing: Styles.grid(1))
@@ -94,7 +94,7 @@ class CalendarView: UIStackView, Viewable {
         let group: NSCollectionLayoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 7)
         
         let groupSize2: NSCollectionLayoutSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight((1.0)))
-        let group2: NSCollectionLayoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize2, subitem: group, count: row.rawValue)
+        let group2: NSCollectionLayoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize2, subitem: group, count: type.numberOfRows)
         let section: NSCollectionLayoutSection = NSCollectionLayoutSection(group: group2)
         section.orthogonalScrollingBehavior = .paging
         section.visibleItemsInvalidationHandler = { [weak self] _, point, _ in
@@ -132,8 +132,8 @@ extension CalendarView {
             let todayPage: Int = todayIndexPath.item / type.numberOfCellInPage
             let indexPathPage: Int = indexPath.item / type.numberOfCellInPage
             
-            guard let todayPageMonthDate: Date = Date().filteredMonth(),
-                  let indexPathPageMonthDate: Date = todayPageMonthDate.offsetMonth(indexPathPage - todayPage) else {
+            guard let todayPageMonthDate: Date = Date().firstDayOfMonth(),
+                  let indexPathPageMonthDate: Date = todayPageMonthDate.month(by: indexPathPage - todayPage) else {
                 return nil
             }
             
@@ -142,8 +142,8 @@ extension CalendarView {
             let dist: Int = indexPath.item % type.numberOfCellInPage
             var isContainedInMonth: Bool = false
             
-            guard let date: Date = indexPathPageMonthDate.offsetDay(dist - indexPathPageFirstDayWeekday),
-                  let monthDist = date.filteredMonth()?.months(from: indexPathPageMonthDate)
+            guard let date: Date = indexPathPageMonthDate.day(by: dist - indexPathPageFirstDayWeekday),
+                  let monthDist = date.firstDayOfMonth()?.months(from: indexPathPageMonthDate)
             else {
                 return nil
             }
@@ -154,7 +154,7 @@ extension CalendarView {
             return CalendarDay(date: date, isContainedInMonth: isContainedInMonth)
             
         case .week:
-            guard let filteredTodayMonthDay = Date().filteredMonthDay() else {
+            guard let filteredTodayMonthDay = Date().withoutTime() else {
                 return nil
             }
             var todayFirstDayWeek: Int = filteredTodayMonthDay.firstDayWeekday() - startWeekDay.rawValue
@@ -162,7 +162,7 @@ extension CalendarView {
             let todayIndexPathItem: Int = todayIndexPath.item % type.numberOfCellInPage
             let todayIndex: Int = todayIndexPath.item + (todayFirstDayWeek - todayIndexPathItem)
             
-            guard let date: Date = Date().filteredMonthDay()?.offsetDay(indexPath.item - todayIndex) else {
+            guard let date: Date = Date().withoutTime()?.day(by: indexPath.item - todayIndex) else {
                 return nil
             }
             indexPathDic[date, default: []].insert(indexPath)

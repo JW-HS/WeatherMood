@@ -18,12 +18,12 @@ final class DiaryCalendarViewController: BaseViewController, Viewable {
     }()
     
     let calendarView: CalendarView = {
-        let calendarView: CalendarView = CalendarView(type: .month, startWeekDay: .sunday)
+        let calendarView: CalendarView = CalendarView(type: .month, startWeekDay: .monday)
         calendarView.backgroundColor = .systemGray6
         calendarView.collectionView.register(CalendarCell.self, forCellWithReuseIdentifier: CalendarCell.reuseIdentifier)
         return calendarView
     }()
-
+    
     // MARK: - Method
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,11 +43,12 @@ final class DiaryCalendarViewController: BaseViewController, Viewable {
         calendarView.calendarViewDelegate = self
         
         let safeLayout: UILayoutGuide = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate(
-            [stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-             stackView.topAnchor.constraint(equalTo: safeLayout.topAnchor, constant: 100),
-             stackView.bottomAnchor.constraint(equalTo: safeLayout.bottomAnchor, constant: -100)])
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: safeLayout.topAnchor, constant: 100),
+            stackView.bottomAnchor.constraint(equalTo: safeLayout.bottomAnchor, constant: -100)
+        ])
     }
 }
 

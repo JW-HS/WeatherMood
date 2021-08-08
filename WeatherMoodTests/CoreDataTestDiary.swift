@@ -206,9 +206,9 @@ class CoreDataTestDiary: XCTestCase {
     
     func test_diary를_2개_만들면_perMontn의_emoticonArray에는_두개를_가져올수있다() {
         timeout(2) { exp in
-            createMockDiary(Date().offsetDay(+3)!,
+            createMockDiary(Date().day(by: +3)!,
                             emoticon: .sunny) {
-                self.createMockDiary(Date().offsetDay(+1)!,
+                self.createMockDiary(Date().day(by: +1)!,
                                      emoticon: .hot ) {
                     self.manager.fetch { (diaryPerMonths: [DiaryPerMonth]?) in
                         exp.fulfill()
@@ -241,8 +241,8 @@ class CoreDataTestDiary: XCTestCase {
     func test_오늘날짜_diary를_만들고_어제날짜Diary를_만들면_가장먼저나오는_Diary는_오늘날짜Diary다() {
         timeout(2) { exp in
             let curDate = Date()
-            let beforeDate = Date().offsetDay(-2)!
-            createMockDiary(beforeDate.offsetDay(-3)!) {
+            let beforeDate = Date().day(by: -2)!
+            createMockDiary(beforeDate.day(by: -3)!) {
                 self.createMockDiary(curDate) {
                     self.createMockDiary(beforeDate) {
                         self.manager.fetch { (diary: [Diary]?) in

@@ -23,7 +23,7 @@ class CalendarCell: UICollectionViewCell, Viewable {
         label.textColor = .black
         return label
     }()
-
+    
     var titleLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = " "
@@ -36,22 +36,23 @@ class CalendarCell: UICollectionViewCell, Viewable {
         super.init(frame: frame)
         setupViews()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     func setupViews() {
         stackView.addArrangedSubview(dateLabel)
         stackView.addArrangedSubview(titleLabel)
         contentView.addSubview(stackView)
         backgroundColor = .white
         
-        NSLayoutConstraint.activate(
-            [stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)])
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
     }
     
     func updateUIBy(_ date: Date, _ model: Diary?, isContainedInMonth: Bool) {

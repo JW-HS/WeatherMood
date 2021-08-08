@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 /// 달력상단에 요일들을 나타내는 뷰다.
 ///
 /// 월요일로 시작할지 일요일로 시작할지 파라미터를 받는다.
@@ -16,9 +15,9 @@ import UIKit
 /// let weekView = WeekView(startWeekDay: .sunday)
 /// ```
 class WeekView: UIStackView, Viewable {
-    private let weekList: [String] = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
+    private let dayOfWeek: [String] = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
     var startWeekDay: CalendarStartWeekDay = .sunday
-    
+
     convenience init(startWeekDay: CalendarStartWeekDay) {
         self.init(frame: .zero)
         self.startWeekDay = startWeekDay
@@ -33,19 +32,21 @@ class WeekView: UIStackView, Viewable {
         super.init(coder: coder)
     }
     
-    func setupViews() {
-        var week: [String] = []
+    private func makeWeek() -> [String] {
         switch startWeekDay {
         case .monday:
-            week = weekList
-            week.append(week.removeFirst())
+            var temp: [String] = dayOfWeek
+            temp.append(temp.removeFirst())
+            return temp
         case .sunday:
-            week = weekList
+            return dayOfWeek
         }
+    }
+
+    func setupViews() {
         axis = .horizontal
-        distribution = .fillEqually
-        
-        week.forEach {
+        distribution = .fillEqually   
+        makeWeek().forEach {
             let label: UILabel = UILabel()
             label.textAlignment = .center
             label.textColor = .black
